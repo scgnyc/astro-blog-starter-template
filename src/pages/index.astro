@@ -8,24 +8,107 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
 <head>
-  <BaseHead title={SITE_TITLE || "Orthodox Ventures"} description={SITE_DESCRIPTION || "Explore innovation and opportunity with Orthodox Ventures"} />
+  <BaseHead title={SITE_TITLE || "Orthodox Ventures"} description={SITE_DESCRIPTION || "Venture capital for bold ideas. OrthodoxVentures.com"} />
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    }
+    .main-hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(120deg, #150084 20%, #0a0a0a 80%);
+      padding: 4rem 1rem 2rem;
+    }
+    .main-hero h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .main-hero .subhead {
+      font-size: 1.5rem;
+      color: #d1b977;
+      margin-bottom: 2rem;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 3rem 1rem 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    .highlight-card {
+      background: #181828;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px #15008420;
+      padding: 2rem 1.5rem;
+      transition: box-shadow 0.2s, background 0.3s;
+      text-align: left;
+    }
+    .highlight-card:hover {
+      box-shadow: 0 8px 50px #15008444;
+      background: #232347;
+    }
+    .highlight-title {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .highlight-desc {
+      color: #d1d1d1;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .read-more {
+      color: #a3bbf2;
+      text-decoration: underline;
+      font-size: 0.96rem;
+    }
+    @media (max-width: 650px) {
+      .main-hero h1 { font-size: 2.1rem; }
+      .main-hero .subhead { font-size: 1rem; }
+    }
+  </style>
 </head>
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #090909, #1d1d1d); color: #f0f0f0; margin: 0; padding: 0;">
+<body>
   <Header />
-  <main style="max-width: 860px; margin: 2rem auto; padding: 1rem;">
-    <h1 style="font-size: 3.2rem; font-weight: 800; color: #00d8ff; margin-bottom: 0.25rem;">
-      🚀 Welcome to Orthodox Ventures
-    </h1>
-    <p style="font-style: italic; font-size: 1.3rem; color: #aaa; margin-bottom: 2rem;">
-      Discover bold ideas, innovative projects, and future-forward ventures at <a href="https://OrthodoxVentures.com" style="color: #00d8ff; text-decoration: none;">OrthodoxVentures.com</a>.
-    </p>
-
-    <section style="background: #111; padding: 1.5rem; border-radius: 8px; box-shadow: 0 0 15px #00d8ff33;">
-      <h2 style="color: #00aaff; margin-top: 0;">🛠️ Getting Started</h2>
-      <p>
-        This starter site is powered by <a href="https://astro.build" style="color: #00d8ff;">Astro</a>. Use it as your launchpad for building engaging, fast, and scalable ventures online.
-      </p>
-      <p>Here’s how to customize your site:</p>
-      <ul style="line-height: 1.6; list-style-type: disc; margin-left: 1.5rem;">
-        <li>Edit the homepage in <code>src/pages/index.astro</code> to share your vision.</li>
-        <li>Update navigation and branding
+  <main>
+    <section class="main-hero">
+      <h1>Orthodox Ventures</h1>
+      <div class="subhead">Partnering with entrepreneurs to build the next wave of impactful companies. <br /> New York &mdash; Global</div>
+    </section>
+    <section class="card-grid">
+      <div class="highlight-card">
+        <div class="highlight-title">Investments</div>
+        <div class="highlight-desc">Backing visionary founders in tech, media, and more.</div>
+        <a class="read-more" href="/blog">View highlights</a>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-title">Ideas</div>
+        <div class="highlight-desc">Read our thinking on innovation, business, and culture.</div>
+        <a class="read-more" href="/blog">Read insights</a>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-title">Team</div>
+        <div class="highlight-desc">Meet the builders and investors powering Orthodox Ventures.</div>
+        <a class="read-more" href="/about">Who we are</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</body>
+</html>
